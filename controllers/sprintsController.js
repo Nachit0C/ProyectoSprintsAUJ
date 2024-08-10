@@ -169,5 +169,17 @@ function validarDatosSprint(newData){
     return true;
 }
 
+// La función chequea si el sprint existe
+async function sprintExists(sprintId){
+    try{
+        const sprints = await readSprints();
+        // Obtengo el sprint con el id
+        const sprint = sprints.find(sprint => sprint.sprintId === parseInt(sprintId));
+        return !!sprint;
+    } catch (err) {
+        return false;
+    }
+}
+
 // Exporto las funciones
-module.exports = {getSprints, getSprint, createSprint, updateSprint, deleteSprint};
+module.exports = {getSprints, getSprint, createSprint, updateSprint, deleteSprint, sprintExists};

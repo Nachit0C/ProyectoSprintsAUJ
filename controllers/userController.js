@@ -169,5 +169,17 @@ function validarDatosUser(newData){
     return true;
 }
 
+// La función chequea si el usuario existe
+async function userExists(userId){
+    try{
+        const users = await readUsers();
+        // Obtengo el usuario con el id
+        const user = users.find(user => user.userId === parseInt(userId));
+        return !!user;
+    } catch (err) {
+        return false;
+    }
+}
+
 // Exporto las funciones
-module.exports = {getUsers, getUser, createUser, updateUser, deleteUser};
+module.exports = {getUsers, getUser, createUser, updateUser, deleteUser, userExists};
