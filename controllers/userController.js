@@ -35,7 +35,6 @@ async function getUser(req, res) {
 async function createUser(req, res) {
     // Guardo los datos recibidos en una constante
     const newData = req.body;
-    //const {nombre, apellido, edad, email, seniority, rol}= newData ;
     // Valido los datos
     if(!validarDatosUser(newData)){
         res.status(400).json({ error: 'Faltan datos requeridos' });
@@ -75,7 +74,6 @@ async function updateUser(req, res) {
     // Guardo los datos recibidos en una constante
     const userId = req.params.id;
     const newData = req.body;
-    //const {nombre, apellido, edad, email, seniority, rol}= newData ;
     // Valido los datos
     if(!validarDatosUser(newData)){
         res.status(400).json({ error: 'Faltan datos requeridos' });
