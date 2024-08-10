@@ -1,0 +1,22 @@
+[
+    {
+        "sprintId": 1,
+        "nombre": "Sprint semana 1",
+        "fechaInicio": "2024-08-07",
+        "fechaFinal": "2024-08-13",
+        "objetivo": "Desarrollar un código sencillo para demostrar por qué deseo formar parte de los grupos de trabajo backend",
+        "equipo": "IT",
+        "tareas": [
+                    "Crear repositorio de GITHub del proyecto",
+                    "Crear servidor con Express.js",
+                    "Idear e implementar la arquitectura y rutas de la lista de usuarios",
+                    "Crear las funciones para el funcionamiento del CRUD de la lista de usuarios",
+                    "Realizar un testeo de las funciones CRUD de la lista de usuarios",
+                    "Crear las funciones para el funcionamiento del CRUD de la lista de sprints",
+                    "Realizar un testeo de las funciones CRUD de la lista de sprints",
+                    "Crear las funciones para el funcionamiento del CRUD de la lista de tareas",
+                    "Realizar un testeo de las funciones CRUD de la lista de tareas",
+                    "Comentar el código"
+                ]
+    }
+]

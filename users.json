@@ -1,0 +1,20 @@
+[
+  {
+    "userId": 1,
+    "nombre": "Ignacio",
+    "apellido": "Ciccone",
+    "edad": 29,
+    "email": "nachociccone@gmail.com",
+    "seniority": "junior",
+    "rol": "backend developer"
+  },
+  {
+    "userId": 2,
+    "nombre": "Cosme",
+    "apellido": "Fulanito",
+    "edad": 35,
+    "email": "cosmefulanito22334455@gmail.com",
+    "seniority": "senior",
+    "rol": "tech lider"
+  }
+]

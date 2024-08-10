@@ -1,0 +1,72 @@
+[
+    {
+        "tareaId": 1,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Crear repositorio de GITHub del proyecto",
+        "status": "Finalizado"
+    },
+    {
+        "tareaId": 2,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Crear servidor con Express.js",
+        "status": "Finalizado"
+    },
+    {
+        "tareaId": 3,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Idear e implementar la arquitectura y rutas de la lista de usuarios",
+        "status": "Finalizado"
+    },
+    {
+        "tareaId": 4,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Crear las funciones para el funcionamiento del CRUD de la lista de usuarios",
+        "status": "Finalizado"
+    },
+    {
+        "tareaId": 5,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Realizar un testeo de las funciones CRUD de la lista de usuarios",
+        "status": "Finalizado"
+    },
+    {
+        "tareaId": 6,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Crear las funciones para el funcionamiento del CRUD de la lista de sprints",
+        "status": "Sin empezar"
+    },
+    {
+        "tareaId": 7,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Realizar un testeo de las funciones CRUD de la lista de sprints",
+        "status": "Sin empezar"
+    },
+    {
+        "tareaId": 8,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Crear las funciones para el funcionamiento del CRUD de la lista de tareas",
+        "status": "Sin empezar"
+    },
+    {
+        "tareaId": 9,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Realizar un testeo de las funciones CRUD de la lista de tareas",
+        "status": "Sin empezar"
+    },
+    {
+        "tareaId": 10,
+        "sprintId": 1,
+        "userId": "1",
+        "objetivo": "Comentar el código",
+        "status": "En proceso"
+    }
+]
