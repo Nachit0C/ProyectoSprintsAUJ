@@ -39,7 +39,7 @@
         "sprintId": 1,
         "userId": "1",
         "objetivo": "Crear las funciones para el funcionamiento del CRUD de la lista de sprints",
-        "status": "Sin empezar"
+        "status": "En proceso"
     },
     {
         "tareaId": 7,
@@ -53,7 +53,7 @@
         "sprintId": 1,
         "userId": "1",
         "objetivo": "Crear las funciones para el funcionamiento del CRUD de la lista de tareas",
-        "status": "Sin empezar"
+        "status": "En proceso"
     },
     {
         "tareaId": 9,
