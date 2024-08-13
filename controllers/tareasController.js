@@ -39,34 +39,33 @@ async function createTarea(req, res) {
     const newData = req.body;
     // Valido los datos
     if(!validarDatosTarea(newData)){
-        res.status(400).json({ error: 'Faltan datos requeridos' });
-    }
-
-    try{
-        // Traigo la lista de tareas
-        const tareas = await readTareas();
-        // Si la lista no tiene tareas, asigno '1' a newTareaId. Si ya tiene tareas, busco el mayor id, le sumo 1 y se lo asigno a newTareaId.
-        const newTareaId = (tareas.length === 0) ? 1 : (tareas.reduce((mayorId, tarea) => (tarea.tareaId > mayorId) ? tarea.tareaId : mayorId, 0) + 1);
-        
-        // Creo la nueva tarea para agregar a la lista de tareas
-        const newTarea = {
-            tareaId: newTareaId,
-            sprintId: newData.sprintId,
-            userId: newData.userId,
-            fechaFinal: newData.fechaFinal,
-            objetivo: newData.objetivo,
-            status: newData.status
-        };
-
-        // Agrego la nueva tarea a la lista
-        tareas.push(newTarea);
-
-        // Sobreescribo la lista de tareas con la lista nueva
-        await writeTareas(tareas);
-
-        res.status(201).json({ message:'Éxito al agregar una nueva tarea', tareas });
-    } catch(err){
-        res.status(500).json({ error: 'Error al agregar una nueva tarea' });
+        res.status(400).json({ error: 'Datos inválidos' });
+    } else {
+        try{
+            // Traigo la lista de tareas
+            const tareas = await readTareas();
+            // Si la lista no tiene tareas, asigno '1' a newTareaId. Si ya tiene tareas, busco el mayor id, le sumo 1 y se lo asigno a newTareaId.
+            const newTareaId = (tareas.length === 0) ? 1 : (tareas.reduce((mayorId, tarea) => (tarea.tareaId > mayorId) ? tarea.tareaId : mayorId, 0) + 1);
+            
+            // Creo la nueva tarea para agregar a la lista de tareas
+            const newTarea = {
+                tareaId: newTareaId,
+                sprintId: newData.sprintId,
+                userId: newData.userId,
+                objetivo: newData.objetivo,
+                status: newData.status
+            };
+    
+            // Agrego la nueva tarea a la lista
+            tareas.push(newTarea);
+    
+            // Sobreescribo la lista de tareas con la lista nueva
+            await writeTareas(tareas);
+    
+            res.status(201).json({ message:'Éxito al agregar una nueva tarea', tareas });
+        } catch(err){
+            res.status(500).json({ error: 'Error al agregar una nueva tarea' });
+        }
     }
 }
 
@@ -77,37 +76,36 @@ async function updateTarea(req, res) {
     const newData = req.body;
     // Valido los datos
     if(!validarDatosTarea(newData)){
-        res.status(400).json({ error: 'Faltan datos requeridos' });
-    }
-
-    try{
-        const tareas = await readTareas();
-
-        const updatedTarea = {
-            tareaId: parseInt(tareaId),
-            sprintId: newData.sprintId,
-            userId: newData.userId,
-            fechaFinal: newData.fechaFinal,
-            objetivo: newData.objetivo,
-            status: newData.status
-        };
-
-        // Busco el índice de la tarea en la lista
-        const index = tareas.findIndex(tarea => tarea.tareaId === parseInt(tareaId));
-        if (index === -1){
-            return res.status(404).json({ error: 'Tarea no encontrada' });
+        res.status(400).json({ error: 'Datos inválidos' });
+    } else {
+        try{
+            const tareas = await readTareas();
+    
+            const updatedTarea = {
+                tareaId: parseInt(tareaId),
+                sprintId: newData.sprintId,
+                userId: newData.userId,
+                objetivo: newData.objetivo,
+                status: newData.status
+            };
+    
+            // Busco el índice de la tarea en la lista
+            const index = tareas.findIndex(tarea => tarea.tareaId === parseInt(tareaId));
+            if (index === -1){
+                return res.status(404).json({ error: 'Tarea no encontrada' });
+            }
+    
+            // Modifico la lista, reemplazando la tarea con los datos actualizados
+            tareas[index] = updatedTarea;
+    
+            // Sobreescribo la lista de tareas con la lista nueva
+            await writeTareas(tareas);
+    
+            res.status(200).json({ message:'Éxito al actualizar tarea', tareas });
+    
+        } catch(err){
+            res.status(500).json({ error: 'Error al actualizar tarea' });
         }
-
-        // Modifico la lista, reemplazando la tarea con los datos actualizados
-        tareas[index] = updatedTarea;
-
-        // Sobreescribo la lista de tareas con la lista nueva
-        await writeTareas(tareas);
-
-        res.status(200).json({ message:'Éxito al actualizar tarea', tareas });
-
-    } catch(err){
-        res.status(500).json({ error: 'Error al actualizar tarea' });
     }
 }
 

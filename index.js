@@ -5,6 +5,7 @@ const cors = require('cors');
 // Importo las rutas
 const users = require('./rutas/rutasUsers');
 const sprints = require('./rutas/rutasSprints');
+const tareas = require('./rutas/rutasTareas');
 
 const PORT = process.env.PORT || 3000;
 
@@ -22,6 +23,7 @@ app.get('/', ()=>{
 app.use('/users', users);
 
 app.use('/sprints', sprints);
+app.use('/tareas', tareas);
 
 // Inicializo el servidor
 app.listen(PORT, ()=>{

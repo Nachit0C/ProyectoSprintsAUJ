@@ -1,22 +1,36 @@
 [
-    {
-        "sprintId": 1,
-        "nombre": "Sprint semana 1",
-        "fechaInicio": "2024-08-07",
-        "fechaFinal": "2024-08-13",
-        "objetivo": "Desarrollar un código sencillo para demostrar por qué deseo formar parte de los grupos de trabajo backend",
-        "equipo": "IT",
-        "tareas": [
-                    "Crear repositorio de GITHub del proyecto",
-                    "Crear servidor con Express.js",
-                    "Idear e implementar la arquitectura y rutas de la lista de usuarios",
-                    "Crear las funciones para el funcionamiento del CRUD de la lista de usuarios",
-                    "Realizar un testeo de las funciones CRUD de la lista de usuarios",
-                    "Crear las funciones para el funcionamiento del CRUD de la lista de sprints",
-                    "Realizar un testeo de las funciones CRUD de la lista de sprints",
-                    "Crear las funciones para el funcionamiento del CRUD de la lista de tareas",
-                    "Realizar un testeo de las funciones CRUD de la lista de tareas",
-                    "Comentar el código"
-                ]
-    }
+  {
+    "sprintId": 1,
+    "nombre": "Sprint semana 1",
+    "fechaInicio": "2024-08-07",
+    "fechaFinal": "2024-08-13",
+    "objetivo": "Desarrollar un código sencillo para demostrar por qué deseo formar parte de los grupos de trabajo backend",
+    "equipo": "IT",
+    "tareas": [
+      "Crear repositorio de GITHub del proyecto",
+      "Crear servidor con Express.js",
+      "Idear e implementar la arquitectura y rutas de la lista de usuarios",
+      "Crear las funciones para el funcionamiento del CRUD de la lista de usuarios",
+      "Realizar un testeo de las funciones CRUD de la lista de usuarios",
+      "Crear las funciones para el funcionamiento del CRUD de la lista de sprints",
+      "Realizar un testeo de las funciones CRUD de la lista de sprints",
+      "Crear las funciones para el funcionamiento del CRUD de la lista de tareas",
+      "Realizar un testeo de las funciones CRUD de la lista de tareas",
+      "Comentar el código"
+    ]
+  },
+  {
+    "sprintId": 2,
+    "nombre": "Sprint semana 2",
+    "fechaInicio": "2024-08-14",
+    "fechaFinal": "2024-08-20",
+    "objetivo": "Solicitar una colaboración para el repositorio",
+    "equipo": "IT",
+    "tareas": [
+      "Crea una issue que alguien más deba resolver en otra rama",
+      "Documentar cómo debe realizarse la issue",
+      "Conseguir a alguien que realice la issue",
+      "Una vez resuelta, acepta la pull request"
+    ]
+  }
 ]

@@ -37,35 +37,35 @@ async function createSprint(req, res) {
     const newData = req.body;
     // Valido los datos
     if(!validarDatosSprint(newData)){
-        res.status(400).json({ error: 'Faltan datos requeridos' });
-    }
-
-    try{
-        // Traigo la lista de sprints
-        const sprints = await readSprints();
-        // Si la lista no tiene sprints, asigno '1' a newSprintId. Si ya tiene sprints, busco el mayor id, le sumo 1 y se lo asigno a newSprintId.
-        const newSprintId = (sprints.length === 0) ? 1 : (sprints.reduce((mayorId, sprint) => (sprint.sprintId > mayorId) ? sprint.sprintId : mayorId, 0) + 1);
-        
-        // Creo el nuevo sprint para agregar a la lista de sprints
-        const newSprint = {
-            sprintId: newSprintId,
-            nombre: newData.nombre,
-            fechaInicio: newData.fechaInicio,
-            fechaFinal: newData.fechaFinal,
-            objetivo: newData.objetivo,
-            equipo: newData.equipo,
-            tareas: newData.tareas
-        };
-
-        // Agrego el nuevo sprint a la lista
-        sprints.push(newSprint);
-
-        // Sobreescribo la lista de sprints con la lista nueva
-        await writeSprints(sprints);
-
-        res.status(201).json({ message:'Éxito al agregar un nuevo sprint', sprints });
-    } catch(err){
-        res.status(500).json({ error: 'Error al agregar un nuevo sprint' });
+        res.status(400).json({ error: 'Datos inválidos' });
+    } else {
+        try{
+            // Traigo la lista de sprints
+            const sprints = await readSprints();
+            // Si la lista no tiene sprints, asigno '1' a newSprintId. Si ya tiene sprints, busco el mayor id, le sumo 1 y se lo asigno a newSprintId.
+            const newSprintId = (sprints.length === 0) ? 1 : (sprints.reduce((mayorId, sprint) => (sprint.sprintId > mayorId) ? sprint.sprintId : mayorId, 0) + 1);
+            
+            // Creo el nuevo sprint para agregar a la lista de sprints
+            const newSprint = {
+                sprintId: newSprintId,
+                nombre: newData.nombre,
+                fechaInicio: newData.fechaInicio,
+                fechaFinal: newData.fechaFinal,
+                objetivo: newData.objetivo,
+                equipo: newData.equipo,
+                tareas: newData.tareas
+            };
+    
+            // Agrego el nuevo sprint a la lista
+            sprints.push(newSprint);
+    
+            // Sobreescribo la lista de sprints con la lista nueva
+            await writeSprints(sprints);
+    
+            res.status(201).json({ message:'Éxito al agregar un nuevo sprint', sprints });
+        } catch(err){
+            res.status(500).json({ error: 'Error al agregar un nuevo sprint' });
+        }
     }
 }
 
@@ -76,38 +76,38 @@ async function updateSprint(req, res) {
     const newData = req.body;
     // Valido los datos
     if(!validarDatosSprint(newData)){
-        res.status(400).json({ error: 'Faltan datos requeridos' });
-    }
-
-    try{
-        const sprints = await readSprints();
-
-        const updatedSprint = {
-            sprintId: parseInt(sprintId),
-            nombre: newData.nombre,
-            fechaInicio: newData.fechaInicio,
-            fechaFinal: newData.fechaFinal,
-            objetivo: newData.objetivo,
-            equipo: newData.equipo,
-            tareas: newData.tareas
-        };
-
-        // Busco el índice del sprint en la lista
-        const index = sprints.findIndex(sprint => sprint.sprintId === parseInt(sprintId));
-        if (index === -1){
-            return res.status(404).json({ error: 'Sprint no encontrado' });
+        res.status(400).json({ error: 'Datos inválidos' });
+    } else {
+        try{
+            const sprints = await readSprints();
+    
+            const updatedSprint = {
+                sprintId: parseInt(sprintId),
+                nombre: newData.nombre,
+                fechaInicio: newData.fechaInicio,
+                fechaFinal: newData.fechaFinal,
+                objetivo: newData.objetivo,
+                equipo: newData.equipo,
+                tareas: newData.tareas
+            };
+    
+            // Busco el índice del sprint en la lista
+            const index = sprints.findIndex(sprint => sprint.sprintId === parseInt(sprintId));
+            if (index === -1){
+                return res.status(404).json({ error: 'Sprint no encontrado' });
+            }
+    
+            // Modifico la lista, reemplazando el sprint con los datos actualizados
+            sprints[index] = updatedSprint;
+    
+            // Sobreescribo la lista de sprints con la lista nueva
+            await writeSprints(sprints);
+    
+            res.status(200).json({ message:'Éxito al actualizar sprint', sprints });
+    
+        } catch(err){
+            res.status(500).json({ error: 'Error al actualizar sprint' });
         }
-
-        // Modifico la lista, reemplazando el sprint con los datos actualizados
-        sprints[index] = updatedSprint;
-
-        // Sobreescribo la lista de sprints con la lista nueva
-        await writeSprints(sprints);
-
-        res.status(200).json({ message:'Éxito al actualizar sprint', sprints });
-
-    } catch(err){
-        res.status(500).json({ error: 'Error al actualizar sprint' });
     }
 }
 
