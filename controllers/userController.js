@@ -1,6 +1,7 @@
 // Importo los módulos
 const fs = require('fs');
 const path = require("path");
+const tareasController = require('./tareasController');
 
 const usersPath = path.join(__dirname, "../users.json");
 
@@ -117,7 +118,17 @@ async function deleteUser(req, res) {
 
     try {
         const users = await readUsers();
+        
+        // Chequeo si el usuario es responsable de tareas:
+        const tareasResponsable = await tareasController.usuarioResponsableDeTarea(userId);
 
+        //Agrego "No Asignado" a las tareas antes de eliminar el usuario:
+        if (tareasResponsable.length > 0) {
+            for (let tarea of tareasResponsable) {
+                await tareasController.asignarResponsableATarea("No Asignado", tarea);
+            }
+        }
+        
         // Filtro los usuarios para excluir el usuario con el userId especificado
         const updatedUsers = users.filter(user => user.userId !== parseInt(userId));
 
