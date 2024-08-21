@@ -167,5 +167,45 @@ function validarDatosTarea(newData){
     return true;
 }
 
+// La función usuarioResponsableDeTarea recibe un userId y devuelve las tareas relacionadas a dicho usuario.
+async function usuarioResponsableDeTarea(userId) {
+    try{
+        const tareas = await readTareas();
+    
+        const tareasid = [];
+    /* itera en tareas, cuando tareas[i].userId = userId, agrega la tareaId de esa tarea a tareasid */
+        for(let i = 0; i<tareas.length; i++){
+            if(tareas[i].userId === userId){
+                tareasid.push(tareas[i].tareaId);
+            }
+        }
+        //console.log(tareasid);
+        return tareasid;
+    }catch(err){
+        console.error('Error al leer tareas: ', err);
+        return [];
+    }
+}
+
+// La función asignarResponsableATarea asignará el responsable a la tarea (puede ser un userId o "No Asignado").
+async function asignarResponsableATarea(responsable, tareaId) {
+    try {
+        const tareas = await readTareas();
+    
+        // Itera en tareas, cuando tareas.tareaId = tareaId, modifica el userId de esa tarea por responsable
+        for (let i = 0; i < tareas.length; i++) {
+            if (tareas[i].tareaId === tareaId) {
+                tareas[i].userId = responsable;
+            }
+        }
+        
+        // Usa writeTareas(tareas) actualizado
+        await writeTareas(tareas);
+    } catch (err) {
+        console.error('Error al asignar responsable:', err);
+    }
+}
+
+
 // Exporto las funciones
-module.exports = {getTareas, getTarea, createTarea, updateTarea, deleteTarea};
+module.exports = {getTareas, getTarea, createTarea, updateTarea, deleteTarea, usuarioResponsableDeTarea, asignarResponsableATarea};
