@@ -21,7 +21,6 @@ app.get('/', ()=>{
 });
 
 app.use('/users', users);
-
 app.use('/sprints', sprints);
 app.use('/tareas', tareas);
 
