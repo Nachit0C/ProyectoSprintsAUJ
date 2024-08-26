@@ -16,5 +16,14 @@
     "email": "cosmefulanito22334455@gmail.com",
     "seniority": "senior",
     "rol": "tech lider"
+  },
+  {
+    "userId": 3,
+    "nombre": "Alexia",
+    "apellido": "Fernandez Cepeda",
+    "edad": 25,
+    "email": "alexiafernandezc@gmail.com",
+    "seniority": "junior",
+    "rol": "backend developer"
   }
 ]

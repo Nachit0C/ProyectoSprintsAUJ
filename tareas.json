@@ -68,5 +68,89 @@
     "userId": "1",
     "objetivo": "Comentar el código",
     "status": "Finalizado"
+  },
+  {
+    "tareaId": 11,
+    "sprintId": 2,
+    "userId": "1",
+    "objetivo": "Crea una issue que alguien más deba resolver en otra rama",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 12,
+    "sprintId": 2,
+    "userId": "1",
+    "objetivo": "Documentar cómo debe realizarse la issue",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 13,
+    "sprintId": 2,
+    "userId": "1",
+    "objetivo": "Conseguir a alguien que realice la issue",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 14,
+    "sprintId": 2,
+    "userId": "3",
+    "objetivo": "Crear la función usuarioResponsableDeTarea(userId) en tareasController.js",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 15,
+    "sprintId": 2,
+    "userId": "3",
+    "objetivo": "Crear la función asignarResponsableATarea(responsable, tareaId) en tareasController.js",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 16,
+    "sprintId": 2,
+    "userId": "3",
+    "objetivo": "Crear la función asignarResponsableATarea(responsable, tareaId) en tareasController.js",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 17,
+    "sprintId": 2,
+    "userId": "3",
+    "objetivo": "Alpicarlas en deleteUser",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 18,
+    "sprintId": 2,
+    "userId": "1",
+    "objetivo": "Verificar la issue y aceptar la pull request",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 19,
+    "sprintId": 3,
+    "userId": "1",
+    "objetivo": "Crear un archivo README documentando el proyecto",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 20,
+    "sprintId": 3,
+    "userId": "1",
+    "objetivo": "Explicar por qué debería ser seleccionado para los grupos de trabajo de Backend",
+    "status": "Finalizado"
+  },
+  {
+    "tareaId": 21,
+    "sprintId": 4,
+    "userId": "1",
+    "objetivo": "Grabar un video explicando por qué debo estar en los grupos de trabajo de Backend",
+    "status": "Sin empezar"
+  },
+  {
+    "tareaId": 22,
+    "sprintId": 4,
+    "userId": "1",
+    "objetivo": "Compartir el video con los organizadores de AUJ",
+    "status": "Sin empezar"
   }
 ]

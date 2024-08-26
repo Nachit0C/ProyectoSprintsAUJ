@@ -30,7 +30,34 @@
       "Crea una issue que alguien más deba resolver en otra rama",
       "Documentar cómo debe realizarse la issue",
       "Conseguir a alguien que realice la issue",
-      "Una vez resuelta, acepta la pull request"
+      "Crear la función usuarioResponsableDeTarea(userId) en tareasController.js",
+      "Crear la función asignarResponsableATarea(responsable, tareaId) en tareasController.js",
+      "Alpicarlas en deleteUser",
+      "Verificar la issue y aceptar la pull request"
+    ]
+  },
+  {
+    "sprintId": 3,
+    "nombre": "Sprint semana 3",
+    "fechaInicio": "2024-08-21",
+    "fechaFinal": "2024-08-27",
+    "objetivo": "Documentar el proyecto con un archivo README",
+    "equipo": "IT",
+    "tareas": [
+      "Crear un archivo README documentando el proyecto",
+      "Explicar por qué debería ser seleccionado para los grupos de trabajo de Backend"
+    ]
+  },
+  {
+    "sprintId": 4,
+    "nombre": "Sprint semana 4",
+    "fechaInicio": "2024-08-28",
+    "fechaFinal": "2024-09-04",
+    "objetivo": "Grabar una presentación en video",
+    "equipo": "IT",
+    "tareas": [
+      "Grabar un video explicando por qué debo estar en los grupos de trabajo de Backend",
+      "Compartir el video con los organizadores de AUJ"
     ]
   }
 ]
